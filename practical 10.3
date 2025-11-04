@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Social Media App Deno (Frontend Demo)</title>
+
+<style>
+:root {
+  --bg: #f6f8ff;
+  --card: #ffffff;
+  --accent: #0b66c3;
+  --muted: #667280;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+  background: var(--bg);
+  margin: 0;
+  padding: 12px;
+  color: #0b1220;
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 18px;
+}
+
+/* Header */
+header {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card);
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(2,6,21,0.05);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--accent);
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card {
+  background: var(--card);
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 2px 14px rgba(2,6,21,0.05);
+}
+
+/* Profile Box */
+.profileBox {
+  text-align: center;
+}
+
+.avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 999px;
+  display: inline-block;
+  background: #eef2ff;
+  line-height: 84px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* Form Elements */
+input[type="text"], input[type="password"], textarea, select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #dfe3f0;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button.ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid #dfe3f0;
+}
+
+small {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Feed */
+.feedHeader {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.post {
+  border: 1px solid #eef2ff;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: linear-gradient(180deg, #fff, #fbfdff);
+}
+
+.post .meta {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.post img {
+  max-width: 100%;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.postsList {
+  max-height: 75vh;
+  overflow: auto;
+  padding-right: 8px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+  .postsList {
+    max-height: unset;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<header>
+  <h1>Social Media</h1>
+  <button>Download App</button>
+</header>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <div class="card profileBox">
+    <div class="avatar">U</div>
+    <strong>User Name</strong>
+    <small>Welcome back 👋</small>
+  </div>
+
+  <div class="card">
+    <input type="text" placeholder="Search..." />
+    <button>Search</button>
+  </div>
+</div>
+
+<!-- Feed -->
+<div class="card">
+  <div class="feedHeader">
+    <input type="text" placeholder="What's on your mind?" />
+    <button>Post</button>
+  </div>
+
+  <div class="postsList">
+    <div class="post">
+      <div class="meta">User123 • 2h ago</div>
+      <p>Hello world! Loving this new Deno app 🦕✨</p>
+      <img src="https://via.placeholder.com/500x300" alt="">
+      <div class="actions">
+        <button class="ghost">Like</button>
+        <button class="ghost">Comment</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>
